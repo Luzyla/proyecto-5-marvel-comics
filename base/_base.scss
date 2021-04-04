@@ -1,0 +1,23 @@
+@import "fonts";
+@import "texts";
+
+.header {
+    
+    position: relative;
+    &__image {
+        & img {
+            width: 100%;
+        }
+    
+    }
+    &__title {
+        z-index: 2;
+        // position: absolute;
+        // top: 30px;
+        color: #fafafa;
+        background-color: red;
+        width: 100%;
+    }
+}
+
+
