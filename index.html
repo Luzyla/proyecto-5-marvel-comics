@@ -15,23 +15,45 @@
         </div>
         
         <div class="header__image">
-            <img src="" alt="">
+            <img src="images/logo/marvel.jpg" alt="">
         </div>
     </header>
 
     <section class="seccion__principal">
         <div class="seccion_principal__busqueda">
-            <p>Búsqueda</p>
-            <div class="seccion__principal__busqueda__campos">
-                <input type="image" src="" alt="lupa">
-                <label for="busqueda">
-                    <input type="text" name="busqueda" id="">
-                </label>
-            </div>
+            <form action="">
+                <div class="contenedor__busqueda">
+                    <h3>Búsqueda</h3>
+                    <div class="seccion__principal__busqueda__campos">
+                        <input type="image" src="images/varios/icons8-search.svg" alt="lupa">
+                        <label for="busqueda">
+                            <input type="text" name="busqueda" id="">
+                        </label>
+                    </div>
+                </div>
+                <div class="contenedor__tipo-selector">
+                    <p>TIPO</p>
+                    <select name="tipo">
+                        <option value="comics">COMICS</option>
+                        <option value="personajes">PERSONAJES</option>
+                    </select>
+                </div>
+                <div class="contenedor__orden-selector">
+                    <p>ORDEN</p>
+                    <select name="tipo">
+                        <option value="a-z">A-Z</option>
+                        <option value="z-a">Z-A</option>
+                        <option value="mas-nuevos">Mas Nuevos</option>
+                        <option value="mas-viejos">Más Viejos</option>
+                    </select>
+                </div>
+                <button type="button">BUSCAR</button>
+            </form>
         </div>
 
         <div class="seccion__principal__resultados">
-
+            <h3>Resultados</h3>
+            <p></p>
         </div>
     </section>
 
