@@ -1,5 +1,6 @@
 @import "fonts";
 @import "texts";
+// @import "helpers";
 
 .header {
     
@@ -21,7 +22,7 @@
 }
 
 .contenedor__orden-selector {
-    @import %flex-center;
+    @extend %flex-center;
 }
 
 .seccion__principal__resultados {
