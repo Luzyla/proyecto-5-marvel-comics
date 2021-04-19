@@ -1,5 +1,6 @@
 @import "fonts";
 @import "texts";
+// @import "helpers";
 
 .header {
     
@@ -12,12 +13,24 @@
     }
     &__title {
         z-index: 2;
-        // position: absolute;
-        // top: 30px;
+        position: fixed;
+        top: 0;
         color: #fafafa;
         background-color: red;
         width: 100%;
     }
 }
 
+.contenedor__orden-selector {
+    @extend %flex-center;
+}
 
+.seccion__principal__resultados {
+    h3 {
+        font-size: 30px;
+    }
+
+    p {
+        width: 50%;
+    }
+}

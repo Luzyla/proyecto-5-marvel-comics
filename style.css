@@ -18,12 +18,21 @@ p {
 }
 .header__title {
   z-index: 2;
+  position: fixed;
+  top: 0;
   color: #fafafa;
   background-color: red;
   width: 100%;
 }
 
-h1 {
+.seccion__principal__resultados h3 {
+  font-size: 30px;
+}
+.seccion__principal__resultados p {
+  width: 50%;
+}
+
+h1, .contenedor__orden-selector {
   display: flex;
   justify-content: center;
   align-items: center;
