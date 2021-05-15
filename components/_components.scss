@@ -1,0 +1,18 @@
+
+
+.seccion-principal {
+    @extend %flex-center;
+
+    &__resultados {
+        @extend %flex-center;
+    }
+    
+    &__paginacion {
+        @extend %flex-center;
+        button {
+            font-size: $fuente-ppal-size;
+            margin: $margin15;
+            padding: $padding5;
+        };
+    }
+}

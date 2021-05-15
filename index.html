@@ -18,61 +18,64 @@
       </div>
     </header>
 
-    <section class="seccion__principal">
-      <div class="seccion_principal__busqueda">
-        <form action="">
-          <div class="contenedor__busqueda">
-            <h3>Búsqueda</h3>
-            <div class="seccion__principal__busqueda__campos">
-              <input
-                type="image"
-                src="images/varios/icons8-search.svg"
-                alt="lupa"
-              />
-              <label for="busqueda">
-                <input type="text" name="busqueda" id="" />
-              </label>
-            </div>
+    <section class="seccion__buscador">
+      <form action="">
+        <div class="contenedor__buscador">
+          <h3>Búsqueda</h3>
+          <div class="contenedor__buscador__campos">
+            <input
+              type="image"
+              src="images/varios/icons8-search.svg"
+              alt="lupa"
+              class="contenedor__buscador__campos__lupita"
+              aria-hidden="true"
+              tabindex="-1"
+            />
+            <label for="busqueda">
+              <input type="text" name="busqueda" id="" />
+            </label>
           </div>
-          <div class="contenedor__tipo-selector">
-            <p>TIPO</p>
-            <select name="tipo">
-              <option value="comics">COMICS</option>
-              <option value="personajes">PERSONAJES</option>
-            </select>
-          </div>
-          <div class="contenedor__orden-selector">
-            <p>ORDEN</p>
-            <select name="tipo">
-              <option value="a-z">A-Z</option>
-              <option value="z-a">Z-A</option>
-              <option value="mas-nuevos">Mas Nuevos</option>
-              <option value="mas-viejos">Más Viejos</option>
-            </select>
-          </div>
-          <button type="button">BUSCAR</button>
-        </form>
-      </div>
+        </div>
+        <div class="contenedor__buscador__tipo-selector">
+          <p>TIPO</p>
+          <select name="tipo">
+            <option value="comics">COMICS</option>
+            <option value="personajes">PERSONAJES</option>
+          </select>
+        </div>
+        <div class="contenedor__buscador__orden-selector">
+          <p>ORDEN</p>
+          <select name="tipo">
+            <option value="a-z">A-Z</option>
+            <option value="z-a">Z-A</option>
+            <option value="mas-nuevos">Mas Nuevos</option>
+            <option value="mas-viejos">Más Viejos</option>
+          </select>
+        </div>
+        <button type="submit">BUSCAR</button>
+      </form>
+    </section>
 
-      <div class="seccion__principal__resultados">
-        <h3>Resultados</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores
-          qui fuga laudantium delectus. Officia quidem, similique reprehenderit,
-          eius recusandae, soluta laudantium excepturi nam cum sed quos
-          distinctio necessitatibus non debitis! Recusandae id excepturi quas
-          rem eligendi magnam asperiores nemo quos saepe. Incidunt repellat
-          reiciendis velit doloribus totam amet, facilis tenetur est nam
-          voluptatibus mollitia voluptates iusto ipsum culpa, reprehenderit
-          molestiae, voluptatum labore. Dolorum ea aspernatur quaerat adipisci,
-          modi esse magnam nesciunt pariatur hic inventore ab reiciendis beatae
-          vel. Excepturi unde aliquam sunt rem deleniti, quis nostrum reiciendis
-          neque? Inventore architecto eum cum quisquam eveniet odit deleniti
-          mollitia natus magni corrupti.
-        </p>
+    <section class="seccion-principal">
+      <h3>Resultados</h3>
+      <div class="seccion-principal__resultados" id="showing-search"></div>
+
+      <div class="seccion-principal__paginacion">
+        <button type="submit" id="first-page">⏪</button>
+        <button type="submit" id="prev-page">⬅️</button>
+        <button type="submit" id="next-page">➡️</button>
+        <button type="submit" id="last-page">⏩</button>
       </div>
     </section>
 
-    <footer class="seccion__footer"></footer>
+    <footer class="seccion__footer">
+      <p class="seccion__footer__txt">
+        Created by <a href="www.github.com/luzyla">@Luzyla</a> with a lot of
+        <span class="seccion__footer__txt__emoji">💖</span> and galons of
+        <span class="seccion__footer__txt__emoji">🧉</span>
+      </p>
+    </footer>
+
+    <script src="./main.js"></script>
   </body>
 </html>

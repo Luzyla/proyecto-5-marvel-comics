@@ -1,10 +1,12 @@
 
 h1 {
-    font-family: $fuente-principal;
-    font-size: 60px;
+    font-family: $fuente-ppal;
+    font-size: $fuente-ppal-size;
     @extend %flex-center;
 }
 
 p {
-    font-family: $fuente-secundaria;
+    font-family: $fuente-sec;
+    font-size: $fuente-sec-size;
+    @extend %flex-center;
 }

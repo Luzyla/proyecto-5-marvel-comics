@@ -1,6 +1,16 @@
 @import "fonts";
 @import "texts";
-// @import "helpers";
+
+$color-logo: #fafafa;
+$color-contraste: red;
+$color-fuente: #424242;
+$color-fondo: #fafafa;
+
+
+* {
+    margin: $margin0;
+    padding: $padding0;
+}
 
 .header {
     
@@ -14,9 +24,9 @@
     &__title {
         z-index: 2;
         position: fixed;
-        top: 0;
-        color: #fafafa;
-        background-color: red;
+        top: $margin0;
+        color: $color-contraste;
+        background-color: $color-logo;
         width: 100%;
     }
 }
@@ -27,7 +37,7 @@
 
 .seccion__principal__resultados {
     h3 {
-        font-size: 30px;
+        font-size: $h3-size;
     }
 
     p {
