@@ -72,18 +72,16 @@ h1 {
   padding: 0 1rem;
   width: 65%;
 }
-.contenedor-principal__resultados__card {
-  transition: 0.3s;
-}
 .contenedor-principal__resultados__card__comics {
-  width: 9.8rem;
+  transition: 0.3s;
+  width: 10rem;
   padding-bottom: 1rem;
 }
 .contenedor-principal__resultados__card__comics__contenedor-img {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .contenedor-principal__resultados__card__comics__contenedor-img img {
-  width: 9.8rem;
+  width: 10rem;
 }
 .contenedor-principal__resultados__card__comics__txt p {
   margin-top: 1rem;
@@ -111,7 +109,7 @@ h1 {
   height: 2rem;
   color: #fafafa;
 }
-.contenedor-principal__resultados__card:hover {
+.contenedor-principal__resultados:hover {
   cursor: pointer;
   transform: scale(1.1);
 }

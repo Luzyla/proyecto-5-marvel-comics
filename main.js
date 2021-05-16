@@ -15,10 +15,6 @@ let organized = ""
 
 const cantidadResultados = document.getElementById("number-results")
 
-const fuckingFetch = () => {
-  return `${urlBase + url}?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}&orderBy=${organized}`
-}
-
 const definirTipo = () => {
   if (searchType.value === "comics") {
     return "comics"
@@ -43,6 +39,8 @@ const definirOrden = () => {
   }
 }
 
+
+
 const buscador = (url, paginaActual, organized) => {
   console.log("... Buscando comics...")
   fetch(`${urlBase + url}?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}`)
@@ -50,31 +48,47 @@ const buscador = (url, paginaActual, organized) => {
   .then(res => res.json())
 
   .then(data => {
-
-    comics = data.data.results
+    resultados = data.data.results
     console.log("fucking fetch", data)
     showingSearch.innerHTML = ""
-    comics.map(url => {
+    let clase = url
+    
+    cantidadResultados.innerHTML = `${data.data.total} resultados` 
+    
+    resultados.map(url => {
       showingSearch.innerHTML += `
-      <article class="contenedor-principal__resultados__card__${url}" data-id="${url.id}">
-        <div class="contenedor-principal__resultados__card__${url}__contenedor-img">
+      <article class="contenedor-principal__resultados__card__${clase}" data-id="${url.id}">
+        <div class="contenedor-principal__resultados__card__${clase}__contenedor-img">
           <img
             src="${url.thumbnail.path}/portrait_uncanny.jpg" 
             alt="${url.descripcion}"
           />
         </div>
-        <div class="contenedor-principal__resultados__card__${url}__txt">
-          <p class="contenedor-principal__resultados__card__comics__txt">
+        <div class="contenedor-principal__resultados__card__${clase}__txt">
+          <p id="comicsTxt">
             ${url.title}
-          </p>
-          <p class="contenedor-principal__resultados__card__characters__txt">
-            ${url.name}
           </p>
         </div>
       </article>`
+      
     });
   })
+
+  
+  // .then(data => {
+  //   resultados = data.data.results
+  //   const comicsTxt = document.getElementById("comicsTxt")
+  //   const charactersTxt = document.getElementById("charactersTxt")
+  //   resultados.map(url => {
+  //     if (url === "comics") {
+  //       charactersTxt.classList.add("hidden")
+  //     }
+  //     else {
+  //       comicsTxt.classList.add("hidden")
+  //     }
+  // })
 };
+
 
 //PROBANDO FETCH
 // fetch(`${urlBase}comics?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}`)
