@@ -3,71 +3,88 @@ const buttonSearch = document.getElementById("search")
 const buttonNext = document.getElementById("next-page")
 const showingSearch = document.getElementById("showing-search")
 
-const searchTipo = document.getElementById("selector-tipo")
-const searchOrden = document.getElementById("selector-orden")
+const searchType = document.getElementById("selector-tipo")
+const searchOrder = document.getElementById("selector-orden")
 
 const urlBase = "https://gateway.marvel.com/v1/public/"
 const apiKey = "df980dd2c89683b6998c74dae0b8844a"
 const comicsPorPagina = 20;
 let paginaActual = 0;
+let url = ""
+let organized = ""
 
-buttonSearch.onclick = () => {
-  // e.preventDefault()
-  //evaluar tipo y orden + texto input
-  buscador(comics, 1, nombre)
+const cantidadResultados = document.getElementById("number-results")
+
+const fuckingFetch = () => {
+  return `${urlBase + url}?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}&orderBy=${organized}`
 }
 
 const definirTipo = () => {
-  // searchTipo.foreach(
-  //   if
-  // )
+  if (searchType.value === "comics") {
+    return "comics"
+  }
+  else {
+    return "characters"
+  }
+}
+
+const definirOrden = () => {
+  if (searchOrder.value === "a-z") {
+    return organized = "name"
+  }
+  else if (searchOrder.value === "z-a") {
+    return organized = "-name"
+  }
+  else if (searchOrder.value === "mas-nuevos") {
+    return organized = "modified"
+  }
+  else {
+    return organized = "-modified"
+  }
 }
 
 
-buttonNext.onclick = () => {
-  paginaActual++
-  console.log("pagina actual", paginaActual)
-  buscador("comics", paginaActual)
-}
 
 
-const buscador = (url, paginaActual) => {
+
+const buscador = (url, paginaActual, organized) => {
   console.log("... Buscando comics...")
   fetch(`${urlBase + url}?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}`)
 
   .then(res => res.json())
 
   .then(data => {
-    // console.log(data)
+
     comics = data.data.results
-    // console.log("imagen thumbnail", url.comics.thumbnail)
+    console.log("fucking fetch", data)
     showingSearch.innerHTML = ""
     comics.map(url => {
       showingSearch.innerHTML += `
-        <article class="contenedor-principal__resultados__card" class="comic" data-id="${url.id}">
-          <div class="contenedor-principal__resultados__card__contenedor-img">
-            <img
-              src="${url.thumbnail.path}/portrait_uncanny.jpg" 
-              alt="${url.descripcion}"
-            />
-          </div>
-          <div class="contenedor-principal__resultados__card__txt">
-            <p>
-              ${url.title}
-            </p>
-          </div>
-        </article>`
+      <article class="contenedor-principal__resultados__card" class="${url}" data-id="${url.id}">
+        <div class="contenedor-principal__resultados__card__contenedor-img">
+          <img
+            src="${url.thumbnail.path}/portrait_uncanny.jpg" 
+            alt="${url.descripcion}"
+          />
+        </div>
+        <div class="contenedor-principal__resultados__card__txt">
+          <p>
+            ${url.title}
+          </p>
+        </div>
+      </article>`
     });
-  });
+  })
 };
 
 //PROBANDO FETCH
-fetch(`${urlBase}comics?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}`)
-.then(res => res.json())
+// fetch(`${urlBase}comics?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}`)
+// .then(res => res.json())
 
-.then(data => console.log("mostrame el puto fetch", data))
+// .then(data => console.log("mostrame el puto fetch", data))
 
-buscador("comics", 0);
+
+buscador("comics", 0, "name");
 
 const cardComics = (url, paginaActual, nombre) => {
     fetch(`${urlBase + url}?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}`)
@@ -94,30 +111,7 @@ const cardComics = (url, paginaActual, nombre) => {
             </p>
           </div>
         </article>`
-        
-      //     <article>
-      //   <div class="imagen">
-      //     <img src="${personaje.image}">
-      //   </div>
-      //   <div class="info">
-      //   <div class="nombre">
-      //     <h2>${personaje.name}</h2>
-      //   </div>
-      //   <div class="estado">
-      //     <p>${personaje.status}</p>
-      //     - <p>${personaje.species}</p>
-      //   </div>
-      //   <div class="ubicacion">
-      //     <p>Last known location:</p>
-      //     <p>${personaje.location.name}</p>
-      //   </div>
-      //   <div class="episodio">
-      //     <p>First seen in:</p>
-      //     <p>${personaje.episode[0]}</p>
-      //   </div>
-      
-      // </article>
-      //   `;
+
         });
       });
 }
@@ -134,3 +128,19 @@ console.log("holaaaaaaa");
 //     const titulo = document.querySelector('h1');
 //     titulo.textContent = info.name;
 // });
+
+buttonSearch.onclick = (e) => {
+  e.preventDefault()
+  definirOrden()
+  buscador(definirTipo(), paginaActual, organized)
+  console.log(definirTipo(), paginaActual, organized)
+}
+
+
+
+
+buttonNext.onclick = () => {
+  paginaActual++
+  console.log("pagina actual", paginaActual)
+  buscador(url, paginaActual)
+}

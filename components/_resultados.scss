@@ -1,5 +1,5 @@
 $smilie-size: 1.8rem;
-$ancho-contenedor: 70%;
+$ancho-contenedor: 65%;
 
 .contenedor-resultados {
     @extend %flex-list-left;
@@ -29,16 +29,15 @@ $ancho-contenedor: 70%;
         width: $ancho-contenedor;
 
         &__card {
-            width: 10rem;
+            width: 9.8rem;
             padding-bottom: $padding15;
             transition: 0.3s;
 
             &__contenedor-img {
-                width: 9.5rem;
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
                 img {
-                    width: 9.5rem;
+                    width: 9.8rem;
                 }
             }
 

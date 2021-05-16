@@ -51,7 +51,7 @@ h1 {
 }
 
 .contenedor-resultados {
-  width: 70%;
+  width: 65%;
 }
 .contenedor-resultados h3 {
   font-family: "Fjalla One";
@@ -70,19 +70,18 @@ h1 {
   flex-wrap: wrap;
   margin: 0 1rem;
   padding: 0 1rem;
-  width: 70%;
+  width: 65%;
 }
 .contenedor-principal__resultados__card {
-  width: 10rem;
+  width: 9.8rem;
   padding-bottom: 1rem;
   transition: 0.3s;
 }
 .contenedor-principal__resultados__card__contenedor-img {
-  width: 9.5rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .contenedor-principal__resultados__card__contenedor-img img {
-  width: 9.5rem;
+  width: 9.8rem;
 }
 .contenedor-principal__resultados__card__txt p {
   margin-top: 1rem;
@@ -126,7 +125,7 @@ h1 {
 .contenedor-buscador {
   margin-bottom: 1rem;
   padding-bottom: 1rem;
-  width: 70%;
+  width: 65%;
 }
 .contenedor-buscador__titulo h3 {
   font-family: "Fjalla One";
