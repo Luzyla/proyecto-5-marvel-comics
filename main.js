@@ -73,7 +73,7 @@ const buscador = (url, paginaActual, organized) => {
   })
 };
 
-buscador("characters", 0, "name");
+buscador("comics", 0, "title");
 
 console.log("holaaaaaaa");
 
