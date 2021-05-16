@@ -51,85 +51,42 @@ const buscador = (url, paginaActual, organized) => {
 
   .then(data => {
 
-    comics = data.data.results
+    busqueda = data.data.results
     console.log("fucking fetch", data)
     showingSearch.innerHTML = ""
-    comics.map(url => {
+    let choosed = url
+
+    cantidadResultados.innerHTML = `${data.data.total} resultados`
+
+    const textoComics = document.getElementsByClassName("contenedor-principal__resultados__card__comics__txt")
+    const textoCharacters = document.getElementsByClassName("contenedor-principal__resultados__card__characters__txt")
+
+    busqueda.map(url => {
       showingSearch.innerHTML += `
-      <article class="contenedor-principal__resultados__card__${url}" data-id="${url.id}">
-        <div class="contenedor-principal__resultados__card__${url}__contenedor-img">
+      <article class="contenedor-principal__resultados__card__${choosed}" data-id="${url.id}">
+        <div class="contenedor-principal__resultados__card__${choosed}__contenedor-img">
           <img
             src="${url.thumbnail.path}/portrait_uncanny.jpg" 
             alt="${url.descripcion}"
           />
         </div>
-        <div class="contenedor-principal__resultados__card__${url}__txt">
-          <p class="contenedor-principal__resultados__card__comics__txt">
-            ${url.title}
-          </p>
-          <p class="contenedor-principal__resultados__card__characters__txt">
-            ${url.name}
-          </p>
+        <div class="contenedor-principal__resultados__card__${choosed}__txt">
+          <p>${url.title || url.name}</p>
         </div>
       </article>`
+
     });
+
+  
   })
 };
 
-//PROBANDO FETCH
-// fetch(`${urlBase}comics?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}`)
-// .then(res => res.json())
-
-// .then(data => console.log("mostrame el puto fetch", data))
-
-
 buscador("characters", 0, "name");
-
-// const cardComics = (url, paginaActual, nombre) => {
-//     fetch(`${urlBase + url}?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}`)
-    
-//     .then(characters => {
-//         //console.log(characters);
-//         const link = document.querySelector("#prox");
-//         link.href = characters.data.nombre
-//         const seccion = document.querySelector('section');
-    
-//         seccion.innerHTML = '';
-//         characters.results.map(personajes => {
-//           seccion.innerHTML += `
-//           <article class="contenedor-principal__resultados__card">
-//           <div class="contenedor-principal__resultados__card__contenedor-img">
-//             <img
-//               src="${personajes.image}"
-//               alt="${descripcion}"
-//             />
-//           </div>
-//           <div class="contenedor-principal__resultados__card__txt">
-//             <p>
-//               ${nombre.card}
-//             </p>
-//           </div>
-//         </article>`
-
-//         });
-//       });
-// }
-
 
 console.log("holaaaaaaa");
 
-// fetch ('https://rickandmortyapi.com/api/character/299')
-// .then((data) => {
-//     return data.json();
-// })
-// .then((info) => {
-//     console.log(info);
-//     const titulo = document.querySelector('h1');
-//     titulo.textContent = info.name;
-// });
-
 buttonSearch.onclick = (e) => {
-  e.preventDefault()
+  // e.preventDefault()
   definirOrden()
   buscador(definirTipo(), paginaActual, organized)
   console.log(definirTipo(), paginaActual, organized)
