@@ -3,11 +3,36 @@
 @import url("https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
 h1 {
   font-family: "Fjalla One";
-  font-size: 60px;
+  font-size: 3.5rem;
 }
 
-p {
-  font-family: "Ropa Sans";
+.contenedor-footer, .contenedor-total, .contenedor-principal__paginacion, .contenedor-principal, .contenedor__orden-selector, h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor-buscador__form__orden-selector, .contenedor-buscador__form__tipo-selector, .contenedor-principal__resultados {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.contenedor-buscador__form__campos, .contenedor-buscador__form, .contenedor-buscador__titulo, .contenedor-buscador {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.contenedor-principal__txt {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
 .header {
@@ -25,22 +50,183 @@ p {
   width: 100%;
 }
 
-.seccion__principal__resultados h3 {
-  font-size: 30px;
+.contenedor-principal {
+  flex-direction: column;
 }
-.seccion__principal__resultados p {
-  width: 50%;
+.contenedor-principal__txt {
+  width: 80%;
+}
+.contenedor-principal__txt h3 {
+  font-family: "Fjalla One";
+  font-size: 1.5rem;
+  width: 100%;
+}
+.contenedor-principal__txt p {
+  font-family: "Ropa Sans";
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+.contenedor-principal__resultados {
+  flex-wrap: wrap;
+  margin: 0 1rem;
+  padding: 0 1rem;
+  width: 80%;
+}
+.contenedor-principal__resultados__card {
+  width: 10rem;
+  padding-bottom: 1rem;
+  transition: 0.3s;
+}
+.contenedor-principal__resultados__card__contenedor-img {
+  width: 9.5rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.contenedor-principal__resultados__card__contenedor-img img {
+  width: 9.5rem;
+}
+.contenedor-principal__resultados__card__txt p {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  font-family: "Ropa Sans";
+  font-size: 1rem;
+}
+.contenedor-principal__resultados__card:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.contenedor-principal__paginacion {
+  margin-bottom: 2rem;
+}
+.contenedor-principal__paginacion button {
+  width: 3.8rem;
+  font-family: "Fjalla One";
+  font-size: 1.8rem;
+  margin: 0.34rem;
+  background-color: #424242;
+  outline: none;
+  border: 0.1rem solid #424242;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  color: #fafafa;
+  font-weight: bold;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: 0.3s;
+}
+.contenedor-principal__paginacion button:hover {
+  color: red;
+  transform: scaleY(1.2);
 }
 
-h1, .contenedor__orden-selector {
+.contenedor-total {
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.contenedor-buscador {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
+.contenedor-buscador__titulo h3 {
+  font-family: "Fjalla One";
+  font-size: 1.5rem;
+  justify-content: flex-start;
+}
+.contenedor-buscador__form {
+  align-items: center;
+}
+.contenedor-buscador__form__campos {
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
+.contenedor-buscador__form__campos__lupita {
+  width: 2rem;
+}
+.contenedor-buscador__form__campos input {
+  outline: none;
+  border: none;
+  border-bottom: 0.125rem solid #424242;
+  padding-bottom: 0.34rem;
+  padding-right: 2rem;
+  height: 2rem;
+  max-width: 12.5rem;
+}
+.contenedor-buscador__form__tipo-selector p {
+  font-family: "Ropa Sans";
+  font-size: 1rem;
+  padding: 1rem;
+  font-weight: bold;
+}
+.contenedor-buscador__form__orden-selector {
+  margin: 1rem;
+}
+.contenedor-buscador__form__orden-selector p {
+  font-family: "Ropa Sans";
+  font-size: 1rem;
+  padding: 1rem;
+  font-weight: bold;
+}
+.contenedor-buscador__form button {
+  font-family: "Ropa Sans";
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fafafa;
+  padding: 0.34rem;
+  background-color: #424242;
+  outline: none;
+  border: none;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  height: 2rem;
+}
+.contenedor-buscador__form button:hover {
+  background-color: red;
+}
+
+.contenedor-footer {
+  width: 100%;
+  background-color: #424242;
+}
+.contenedor-footer__txt {
+  font-family: "Ropa Sans";
+  font-size: 1rem;
+  margin: 1rem;
+  color: #fafafa;
+}
+.contenedor-footer__txt a {
+  text-decoration: none;
+  color: red;
+  font-weight: bold;
+  cursor: pointer;
+}
+.contenedor-footer__txt a:hover {
+  color: greenyellow;
+}
+.contenedor-footer__txt__emoji {
+  font-size: 1.3rem;
+}
+
+h1, .contenedor__orden-selector, .contenedor-principal, .contenedor-principal__paginacion, .contenedor-total, .contenedor-footer {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-* {
-  margin: 0px;
-  padding: 0px;
+.contenedor-principal__resultados, .contenedor-buscador__form__tipo-selector, .contenedor-buscador__form__orden-selector {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.contenedor-buscador, .contenedor-buscador__titulo, .contenedor-buscador__form, .contenedor-buscador__form__campos {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.contenedor-principal__txt {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 /*# sourceMappingURL=style.css.map */

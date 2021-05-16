@@ -1,0 +1,89 @@
+.contenedor-total {
+    @extend %flex-center;
+    flex-direction: column;
+    margin-top: $margin15;
+};
+
+.contenedor-buscador {
+    @extend %flex-left;
+    margin-bottom: $margin15;
+    padding-bottom: $padding15;    
+    &__titulo {
+        @extend %flex-left;
+        h3 {
+            font-family: $fuente-ppal;
+            font-size: $h3-size;
+            justify-content: flex-start;
+        }
+    }
+    
+    &__form {
+        @extend %flex-left;
+        align-items: center;
+        
+        &__campos {
+            @extend %flex-left;
+            margin-top: $margin15;
+            margin-right: $margin15;
+            
+            &__lupita {
+                width: 2rem;
+            }
+            input {
+                outline: none;
+                border: none;
+                border-bottom: 0.125rem solid $color-fuente;
+                padding-bottom: $padding5;
+                padding-right: $padding30;
+                height: 2rem;
+                max-width: 12.5rem;
+            }
+        }
+
+        &__tipo-selector {
+            @extend %flex-spaced;
+            p {
+                font-family: $fuente-sec;
+                font-size: $fuente-sec-size;
+                padding: $padding15;
+                font-weight: bold;
+            }
+        }
+
+        &__orden-selector {
+            @extend %flex-spaced;
+            margin: $margin15;
+            
+            p {
+                font-family: $fuente-sec;
+                font-size: $fuente-sec-size;
+                padding: $padding15;
+                font-weight: bold;
+            }
+        }
+
+        button {
+            font-family: $fuente-sec;
+            font-size: $fuente-sec-size;
+            font-weight: bold;
+            color: $color-logo;
+            padding: $padding5;
+            background-color: $color-fuente;
+            outline: none;
+            border: none;
+            border-radius: $radius;
+            cursor: pointer;
+            height: 2rem;
+        }
+
+        button:hover {
+            background-color: $color-contraste;
+        }
+    
+    }
+
+    
+
+
+
+};

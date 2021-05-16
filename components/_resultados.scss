@@ -1,0 +1,85 @@
+$smilie-size: 1.8rem;
+
+.contenedor-principal {
+    @extend %flex-center;
+    flex-direction: column;
+
+    &__txt {
+        @extend %flex-list-left;
+        width: 80%;
+
+        h3 {
+            font-family: $fuente-ppal;
+            font-size: $h3-size;
+            width: 100%;
+        }
+    
+        p {
+            font-family: $fuente-sec;
+            margin-bottom: $margin15;
+            font-size: $fuente-sec-size;
+        }
+    }
+
+    &__resultados {
+        @extend %flex-spaced;
+        flex-wrap: wrap;
+        margin: $margin0 $margin15;
+        padding: $margin0 $padding15;
+        width: 80%;
+
+        &__card {
+            width: 10rem;
+            padding-bottom: $padding15;
+            transition: 0.3s;
+
+            &__contenedor-img {
+                width: 9.5rem;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+                img {
+                    width: 9.5rem;
+                }
+            }
+
+            &__txt {
+                p {
+                    margin-top: $margin15;
+                    margin-bottom: $margin30;
+                    font-family: $fuente-sec;
+                    font-size: $fuente-sec-size;
+                }
+            }
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+            }
+
+        }
+    };
+    
+    &__paginacion {
+        @extend %flex-center;
+        margin-bottom: $margin30;
+        button {
+            width: 3.8rem;
+            font-family: $fuente-ppal;
+            font-size: $smilie-size;
+            margin: $margin5;
+            background-color: $color-fuente;
+            outline: none;
+            border: 0.1rem solid $color-fuente;
+            border-radius: $radius;
+            cursor: pointer;
+            color: $color-logo;
+            font-weight: bold;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            transition: 0.3s;
+        };
+        button:hover {
+            color: $color-contraste;
+            transform: scaleY(1.2); 
+        }
+    }
+}

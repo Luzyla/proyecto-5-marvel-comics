@@ -1,8 +1,12 @@
 $margin0: 0;
+$margin5: 0.34rem;
 $margin15: 1rem;
+$margin30: 2rem;
 $padding0: 0;
 $padding5: 0.34rem;
 $padding15: 1rem;
+$padding30: 2rem;
+$radius: 0.2rem;
 
 %flex-center {
     display: flex;
@@ -12,6 +16,19 @@ $padding15: 1rem;
 
 %flex-spaced {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
+
+%flex-left {
+    display: flex;
+    justify-content: flex-start;
+}
+
+%flex-list-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+

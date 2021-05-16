@@ -1,0 +1,28 @@
+.contenedor-footer {
+    width: 100%;
+    background-color: $color-fuente;
+    @extend %flex-center;
+
+    &__txt {
+        font-family: $fuente-sec;
+        font-size: $fuente-sec-size;
+        margin: $margin15;
+        color: $color-logo;
+
+        a {
+            text-decoration: none;
+            color: $color-contraste;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        a:hover {
+            color: greenyellow;
+        }
+
+        &__emoji {
+            font-size: 1.3rem;
+
+        }
+    }
+}
