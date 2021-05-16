@@ -1,5 +1,7 @@
 $smilie-size: 1.8rem;
 $ancho-contenedor: 65%;
+$ancho-comic: 10rem;
+$ancho-personaje: 9rem;
 
 .contenedor-resultados {
     @extend %flex-list-left;
@@ -28,69 +30,75 @@ $ancho-contenedor: 65%;
         padding: $margin0 $padding15;
         width: $ancho-contenedor;
 
-        &__card {
+        &__card__comics {
             transition: 0.3s;
-            
-            &__comics {
-                width: 9.8rem;
-                padding-bottom: $padding15;
+            width: $ancho-comic;
+            padding-bottom: $padding15;
 
-                &__contenedor-img {
-                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                    // width: 9.8rem;
-                    img {
-                        width: 9.8rem;
-                    }
+            &__contenedor-img {
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                img {
+                    width: $ancho-comic;
                 }
-    
-                &__txt {
-                    p {
-                        margin-top: $margin15;
-                        margin-bottom: $margin30;
-                        font-family: $fuente-sec;
-                        font-size: $fuente-sec-size;
-                        height: 2rem;
-                    }
-                }
-    
             }
 
-            &__characters {
-                width: 9rem;
-                padding-bottom: $padding15;
-
-                &__contenedor-img {
-                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                    background-color: $color-fuente;
-                    img {
-                        width: 9rem;
-                    }
+            &__txt {
+                p {
+                    margin-top: $margin15;
+                    margin-bottom: $margin30;
+                    font-family: $fuente-sec;
+                    font-size: $fuente-sec-size;
+                    text-align: center;
+                    height: 2rem;
                 }
-    
-                &__txt {
-                    p {
-                        margin-top: $margin15;
-                        margin-bottom: $margin30;
-                        font-family: $fuente-sec;
-                        font-size: $fuente-sec-size;
-                        height: 2rem;
-                        color: $color-logo;
-                    }
-                }
-
             }
-            
+
             &:hover {
                 cursor: pointer;
                 transform: scale(1.1);
             }
+        }
 
+        &__card__characters {
+            transition: 0.3s;
+            width: $ancho-personaje;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            margin-bottom: $margin15;            
+            &__contenedor-img {
+                background-color: $color-fuente;
+                img {
+                    width: $ancho-personaje;
+                }
+            }
+
+            &__txt {
+                display: flex;
+                background-color: $color-fuente;
+                align-items: center;
+                justify-content: center;
+                p {
+                    margin: $margin15 $margin5;
+                    font-family: $fuente-sec;
+                    font-size: $fuente-sec-size;
+                    color: $color-logo;
+                    text-align: center;
+                    height: 2rem;
+                }
+            }
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+                p {
+                    color: $color-contraste;
+                }
+            }
         }
     };
     
     &__paginacion {
         @extend %flex-center;
-        margin-bottom: $margin30;
+        margin: $margin30 $margin15;
         button {
             width: 3.8rem;
             font-family: $fuente-ppal;
@@ -110,7 +118,7 @@ $ancho-contenedor: 65%;
             color: $color-contraste;
             transform: scaleY(1.2); 
         }
-    }
+    };
 };
 
 .hidden {

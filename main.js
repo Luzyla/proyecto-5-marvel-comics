@@ -15,10 +15,6 @@ let organized = ""
 
 const cantidadResultados = document.getElementById("number-results")
 
-const fuckingFetch = () => {
-  return `${urlBase + url}?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}&orderBy=${organized}`
-}
-
 const definirTipo = () => {
   if (searchType.value === "comics") {
     return "comics"
@@ -42,6 +38,8 @@ const definirOrden = () => {
     return organized = "-modified"
   }
 }
+
+
 
 const buscador = (url, paginaActual, organized) => {
   console.log("... Buscando comics...")
@@ -74,10 +72,7 @@ const buscador = (url, paginaActual, organized) => {
           <p>${url.title || url.name}</p>
         </div>
       </article>`
-
     });
-
-  
   })
 };
 
