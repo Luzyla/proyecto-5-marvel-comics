@@ -88,33 +88,48 @@ h1 {
   margin-bottom: 2rem;
   font-family: "Ropa Sans";
   font-size: 1rem;
+  text-align: center;
   height: 2rem;
 }
+.contenedor-principal__resultados__card__comics:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
 .contenedor-principal__resultados__card__characters {
+  transition: 0.3s;
   width: 9rem;
-  padding-bottom: 1rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 1rem;
 }
 .contenedor-principal__resultados__card__characters__contenedor-img {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background-color: #424242;
 }
 .contenedor-principal__resultados__card__characters__contenedor-img img {
   width: 9rem;
 }
+.contenedor-principal__resultados__card__characters__txt {
+  display: flex;
+  background-color: #424242;
+  align-items: center;
+  justify-content: center;
+}
 .contenedor-principal__resultados__card__characters__txt p {
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin: 1rem 0.34rem;
   font-family: "Ropa Sans";
   font-size: 1rem;
-  height: 2rem;
   color: #fafafa;
+  text-align: center;
+  height: 2rem;
 }
-.contenedor-principal__resultados:hover {
+.contenedor-principal__resultados__card__characters:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
+.contenedor-principal__resultados__card__characters:hover p {
+  color: red;
+}
 .contenedor-principal__paginacion {
-  margin-bottom: 2rem;
+  margin: 2rem 1rem;
 }
 .contenedor-principal__paginacion button {
   width: 3.8rem;
