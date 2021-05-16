@@ -43,10 +43,6 @@ const definirOrden = () => {
   }
 }
 
-
-
-
-
 const buscador = (url, paginaActual, organized) => {
   console.log("... Buscando comics...")
   fetch(`${urlBase + url}?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}`)
@@ -60,14 +56,14 @@ const buscador = (url, paginaActual, organized) => {
     showingSearch.innerHTML = ""
     comics.map(url => {
       showingSearch.innerHTML += `
-      <article class="contenedor-principal__resultados__card" class="${url}" data-id="${url.id}">
-        <div class="contenedor-principal__resultados__card__contenedor-img">
+      <article class="contenedor-principal__resultados__card__${url}" data-id="${url.id}">
+        <div class="contenedor-principal__resultados__card__${url}__contenedor-img">
           <img
             src="${url.thumbnail.path}/portrait_uncanny.jpg" 
             alt="${url.descripcion}"
           />
         </div>
-        <div class="contenedor-principal__resultados__card__txt">
+        <div class="contenedor-principal__resultados__card__${url}__txt">
           <p>
             ${url.title}
           </p>
@@ -86,35 +82,35 @@ const buscador = (url, paginaActual, organized) => {
 
 buscador("comics", 0, "name");
 
-const cardComics = (url, paginaActual, nombre) => {
-    fetch(`${urlBase + url}?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}`)
+// const cardComics = (url, paginaActual, nombre) => {
+//     fetch(`${urlBase + url}?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}`)
     
-    .then(characters => {
-        //console.log(characters);
-        const link = document.querySelector("#prox");
-        link.href = characters.data.nombre
-        const seccion = document.querySelector('section');
+//     .then(characters => {
+//         //console.log(characters);
+//         const link = document.querySelector("#prox");
+//         link.href = characters.data.nombre
+//         const seccion = document.querySelector('section');
     
-        seccion.innerHTML = '';
-        characters.results.map(personajes => {
-          seccion.innerHTML += `
-          <article class="contenedor-principal__resultados__card">
-          <div class="contenedor-principal__resultados__card__contenedor-img">
-            <img
-              src="${personajes.image}"
-              alt="${descripcion}"
-            />
-          </div>
-          <div class="contenedor-principal__resultados__card__txt">
-            <p>
-              ${nombre.card}
-            </p>
-          </div>
-        </article>`
+//         seccion.innerHTML = '';
+//         characters.results.map(personajes => {
+//           seccion.innerHTML += `
+//           <article class="contenedor-principal__resultados__card">
+//           <div class="contenedor-principal__resultados__card__contenedor-img">
+//             <img
+//               src="${personajes.image}"
+//               alt="${descripcion}"
+//             />
+//           </div>
+//           <div class="contenedor-principal__resultados__card__txt">
+//             <p>
+//               ${nombre.card}
+//             </p>
+//           </div>
+//         </article>`
 
-        });
-      });
-}
+//         });
+//       });
+// }
 
 
 console.log("holaaaaaaa");
@@ -135,9 +131,6 @@ buttonSearch.onclick = (e) => {
   buscador(definirTipo(), paginaActual, organized)
   console.log(definirTipo(), paginaActual, organized)
 }
-
-
-
 
 buttonNext.onclick = () => {
   paginaActual++
