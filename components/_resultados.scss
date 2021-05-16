@@ -48,6 +48,7 @@ $ancho-personaje: 9rem;
                     margin-bottom: $margin30;
                     font-family: $fuente-sec;
                     font-size: $fuente-sec-size;
+                    text-align: center;
                     height: 2rem;
                 }
             }
@@ -62,7 +63,7 @@ $ancho-personaje: 9rem;
             transition: 0.3s;
             width: $ancho-personaje;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            
+            margin-bottom: $margin15;            
             &__contenedor-img {
                 background-color: $color-fuente;
                 img {
@@ -80,19 +81,19 @@ $ancho-personaje: 9rem;
                     font-family: $fuente-sec;
                     font-size: $fuente-sec-size;
                     color: $color-logo;
-                    
+                    text-align: center;
+                    height: 2rem;
                 }
             }
 
             &:hover {
                 cursor: pointer;
                 transform: scale(1.1);
+                p {
+                    color: $color-contraste;
+                }
             }
-
         }
-            
-        
-        
     };
     
     &__paginacion {
@@ -118,6 +119,7 @@ $ancho-personaje: 9rem;
             transform: scaleY(1.2); 
         }
     };
+
 };
 
 .hidden {
