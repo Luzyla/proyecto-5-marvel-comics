@@ -29,28 +29,57 @@ $ancho-contenedor: 65%;
         width: $ancho-contenedor;
 
         &__card {
-            width: 9.8rem;
-            padding-bottom: $padding15;
             transition: 0.3s;
+            
+            &__comics {
+                width: 9.8rem;
+                padding-bottom: $padding15;
 
-            &__contenedor-img {
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-                img {
-                    width: 9.8rem;
+                &__contenedor-img {
+                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                    // width: 9.8rem;
+                    img {
+                        width: 9.8rem;
+                    }
                 }
+    
+                &__txt {
+                    p {
+                        margin-top: $margin15;
+                        margin-bottom: $margin30;
+                        font-family: $fuente-sec;
+                        font-size: $fuente-sec-size;
+                        height: 2rem;
+                    }
+                }
+    
             }
 
-            &__txt {
-                p {
-                    margin-top: $margin15;
-                    margin-bottom: $margin30;
-                    font-family: $fuente-sec;
-                    font-size: $fuente-sec-size;
-                    height: 2rem;
-                }
-            }
+            &__characters {
+                width: 9rem;
+                padding-bottom: $padding15;
 
+                &__contenedor-img {
+                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                    background-color: $color-fuente;
+                    img {
+                        width: 9rem;
+                    }
+                }
+    
+                &__txt {
+                    p {
+                        margin-top: $margin15;
+                        margin-bottom: $margin30;
+                        font-family: $fuente-sec;
+                        font-size: $fuente-sec-size;
+                        height: 2rem;
+                        color: $color-logo;
+                    }
+                }
+
+            }
+            
             &:hover {
                 cursor: pointer;
                 transform: scale(1.1);
@@ -83,3 +112,7 @@ $ancho-contenedor: 65%;
         }
     }
 };
+
+.hidden {
+    display: none;
+}

@@ -64,8 +64,11 @@ const buscador = (url, paginaActual, organized) => {
           />
         </div>
         <div class="contenedor-principal__resultados__card__${url}__txt">
-          <p>
+          <p class="contenedor-principal__resultados__card__comics__txt">
             ${url.title}
+          </p>
+          <p class="contenedor-principal__resultados__card__characters__txt">
+            ${url.name}
           </p>
         </div>
       </article>`
@@ -80,7 +83,7 @@ const buscador = (url, paginaActual, organized) => {
 // .then(data => console.log("mostrame el puto fetch", data))
 
 
-buscador("comics", 0, "name");
+buscador("characters", 0, "name");
 
 // const cardComics = (url, paginaActual, nombre) => {
 //     fetch(`${urlBase + url}?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}`)
