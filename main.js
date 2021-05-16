@@ -43,7 +43,7 @@ const definirOrden = () => {
 
 const buscador = (url, paginaActual, organized) => {
   console.log("... Buscando comics...")
-  fetch(`${urlBase + url}?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}`)
+  fetch(`${urlBase + url}?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}&orderBy=${organized}`)
 
   .then(res => res.json())
 
