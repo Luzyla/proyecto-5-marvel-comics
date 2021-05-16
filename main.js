@@ -56,9 +56,6 @@ const buscador = (url, paginaActual, organized) => {
 
     cantidadResultados.innerHTML = `${data.data.total} resultados`
 
-    const textoComics = document.getElementsByClassName("contenedor-principal__resultados__card__comics__txt")
-    const textoCharacters = document.getElementsByClassName("contenedor-principal__resultados__card__characters__txt")
-
     busqueda.map(url => {
       showingSearch.innerHTML += `
       <article class="contenedor-principal__resultados__card__${choosed}" data-id="${url.id}">
