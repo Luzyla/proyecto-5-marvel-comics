@@ -23,7 +23,7 @@ h1 {
   justify-content: flex-start;
 }
 
-.contenedor-principal__txt {
+.contenedor-resultados {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -50,27 +50,27 @@ h1 {
   width: 100%;
 }
 
-.contenedor-principal {
-  flex-direction: column;
+.contenedor-resultados {
+  width: 70%;
 }
-.contenedor-principal__txt {
-  width: 80%;
-}
-.contenedor-principal__txt h3 {
+.contenedor-resultados h3 {
   font-family: "Fjalla One";
   font-size: 1.5rem;
-  width: 100%;
 }
-.contenedor-principal__txt p {
+.contenedor-resultados p {
   font-family: "Ropa Sans";
   margin-bottom: 1rem;
   font-size: 1rem;
+}
+
+.contenedor-principal {
+  flex-direction: column;
 }
 .contenedor-principal__resultados {
   flex-wrap: wrap;
   margin: 0 1rem;
   padding: 0 1rem;
-  width: 80%;
+  width: 70%;
 }
 .contenedor-principal__resultados__card {
   width: 10rem;
@@ -89,6 +89,7 @@ h1 {
   margin-bottom: 2rem;
   font-family: "Ropa Sans";
   font-size: 1rem;
+  height: 2rem;
 }
 .contenedor-principal__resultados__card:hover {
   cursor: pointer;
@@ -125,6 +126,7 @@ h1 {
 .contenedor-buscador {
   margin-bottom: 1rem;
   padding-bottom: 1rem;
+  width: 70%;
 }
 .contenedor-buscador__titulo h3 {
   font-family: "Fjalla One";
@@ -222,7 +224,7 @@ h1, .contenedor__orden-selector, .contenedor-principal, .contenedor-principal__p
   justify-content: flex-start;
 }
 
-.contenedor-principal__txt {
+.contenedor-resultados {
   display: flex;
   flex-direction: column;
   align-items: flex-start;

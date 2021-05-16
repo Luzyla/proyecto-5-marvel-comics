@@ -1,32 +1,32 @@
 $smilie-size: 1.8rem;
+$ancho-contenedor: 70%;
+
+.contenedor-resultados {
+    @extend %flex-list-left;
+    width: $ancho-contenedor;
+
+    h3 {
+        font-family: $fuente-ppal;
+        font-size: $h3-size;
+    }
+
+    p {
+        font-family: $fuente-sec;
+        margin-bottom: $margin15;
+        font-size: $fuente-sec-size;
+    };
+}
 
 .contenedor-principal {
     @extend %flex-center;
     flex-direction: column;
-
-    &__txt {
-        @extend %flex-list-left;
-        width: 80%;
-
-        h3 {
-            font-family: $fuente-ppal;
-            font-size: $h3-size;
-            width: 100%;
-        }
-    
-        p {
-            font-family: $fuente-sec;
-            margin-bottom: $margin15;
-            font-size: $fuente-sec-size;
-        }
-    }
 
     &__resultados {
         @extend %flex-spaced;
         flex-wrap: wrap;
         margin: $margin0 $margin15;
         padding: $margin0 $padding15;
-        width: 80%;
+        width: $ancho-contenedor;
 
         &__card {
             width: 10rem;
@@ -48,6 +48,7 @@ $smilie-size: 1.8rem;
                     margin-bottom: $margin30;
                     font-family: $fuente-sec;
                     font-size: $fuente-sec-size;
+                    height: 2rem;
                 }
             }
 
@@ -82,4 +83,4 @@ $smilie-size: 1.8rem;
             transform: scaleY(1.2); 
         }
     }
-}
+};

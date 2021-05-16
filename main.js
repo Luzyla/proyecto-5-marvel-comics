@@ -38,16 +38,16 @@ const buscador = (url, paginaActual) => {
   .then(res => res.json())
 
   .then(data => {
-    console.log(data)
+    // console.log(data)
     comics = data.data.results
     // console.log("imagen thumbnail", url.comics.thumbnail)
     showingSearch.innerHTML = ""
     comics.map(url => {
       showingSearch.innerHTML += `
-        <article class="contenedor-principal__resultados__card">
+        <article class="contenedor-principal__resultados__card" class="comic" data-id="${url.id}">
           <div class="contenedor-principal__resultados__card__contenedor-img">
             <img
-              src="${url.thumbnail}" 
+              src="${url.thumbnail.path}/portrait_uncanny.jpg" 
               alt="${url.descripcion}"
             />
           </div>
@@ -65,7 +65,7 @@ const buscador = (url, paginaActual) => {
 fetch(`${urlBase}comics?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}`)
 .then(res => res.json())
 
-.then(data => console.log(data))
+.then(data => console.log("mostrame el puto fetch", data))
 
 buscador("comics", 0);
 

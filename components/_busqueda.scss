@@ -8,6 +8,8 @@
     @extend %flex-left;
     margin-bottom: $margin15;
     padding-bottom: $padding15;    
+    width: $ancho-contenedor;
+
     &__titulo {
         @extend %flex-left;
         h3 {
