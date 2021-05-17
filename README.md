@@ -1,4 +1,4 @@
-# Búscador de Comics MARVEL / MARVEL Comics Searcher ~ by Luzyla
+# Buscador de Comics MARVEL / MARVEL Comics Searcher ~ by Luzyla
 
 ## URL: https://luzyla.github.io/proyecto-5/
 
