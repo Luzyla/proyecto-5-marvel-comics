@@ -33,6 +33,8 @@ $color-fondo: #fafafa;
 
 .contenedor__orden-selector {
     @extend %flex-center;
+
+    p {
+        width: 50%;
+    }
 }
-
-

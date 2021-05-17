@@ -97,13 +97,7 @@ const buscador = (paramType, paginaActual, paramOrder, paramLupa) => {
   })
 };
 
-<<<<<<< HEAD
 buscador(paramType, paginaActual, paramOrder, paramLupa);
-=======
-buscador("comics", 0, "title");
-
-console.log("holaaaaaaa");
->>>>>>> style
 
 buttonFirst.onclick = () => {
   paginaActual = 0
