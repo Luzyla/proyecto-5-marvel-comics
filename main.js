@@ -125,7 +125,6 @@ buttonLast.onclick = () => {
   buscador(paramType, paginaActual, paramOrder, paramLupa)
 }
 
-
 formulario.onsubmit = (e) => {
   e.preventDefault()
 }
