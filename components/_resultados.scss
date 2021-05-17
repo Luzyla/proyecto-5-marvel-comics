@@ -1,6 +1,6 @@
 $smilie-size: 1.8rem;
 $ancho-contenedor: 65%;
-$ancho-comic: 10rem;
+$ancho-comic: 9.3rem;
 $ancho-personaje: 9rem;
 
 .contenedor-resultados {
@@ -33,12 +33,12 @@ $ancho-personaje: 9rem;
         &__card__comics {
             transition: 0.3s;
             width: $ancho-comic;
-            padding-bottom: $padding15;
+            margin-bottom: $margin15;
 
             &__contenedor-img {
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
                 img {
                     width: $ancho-comic;
+                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
                 }
             }
 
@@ -56,6 +56,9 @@ $ancho-personaje: 9rem;
             &:hover {
                 cursor: pointer;
                 transform: scale(1.1);
+                p {
+                    color: $color-contraste;
+                }
             }
         }
 
