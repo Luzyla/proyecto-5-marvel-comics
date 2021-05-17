@@ -1,15 +1,12 @@
 const buttonSearch = document.getElementById("search")
-
 const buttonFirst = document.getElementById("first-page")
 const buttonPrev = document.getElementById("prev-page")
 const buttonNext = document.getElementById("next-page")
 const buttonLast = document.getElementById("last-page")
-
 const showingSearch = document.getElementById("showing-search")
 const searchType = document.getElementById("selector-tipo")
 const searchOrder = document.getElementById("selector-orden")
 const searchLupa = document.getElementById("lupa-buscar")
-
 const formulario = document.querySelector("form")
 
 const urlBase = "https://gateway.marvel.com/v1/public/"
@@ -69,7 +66,7 @@ const fetchURL = (paramType, paramOrder, paramLupa) => {
 
 const buscador = (paramType, paginaActual, paramOrder, paramLupa) => {
   const urlParametrizada = fetchURL(paramType, paramOrder, paramLupa)
-  console.log("URL PARAM", urlParametrizada)
+  
   fetch(urlParametrizada)
   
   .then(res => res.json())
@@ -78,8 +75,6 @@ const buscador = (paramType, paginaActual, paramOrder, paramLupa) => {
     total = data.data.total
     busqueda = data.data.results
 
-    console.log("fucking fetch", data) //borrar
-    
     showingSearch.innerHTML = ""
     let choosed = `${paramType}`
 
@@ -106,24 +101,20 @@ buscador(paramType, paginaActual, paramOrder, paramLupa);
 
 buttonFirst.onclick = () => {
   paginaActual = 0
-  console.log("pagina actual", paginaActual, organized)
   buscador(paramType, paginaActual, paramOrder, paramLupa)
 }
 
 buttonNext.onclick = () => {
   paginaActual++
-  console.log("pagina actual", paginaActual, organized)
   buscador(paramType, paginaActual, paramOrder, paramLupa)
 }
 
 buttonPrev.onclick = () => {
   paginaActual--
-  console.log("pagina actual", paginaActual, organized)
   buscador(paramType, paginaActual, paramOrder, paramLupa)
 }
 
 buttonLast.onclick = () => {
-  console.log("cantidad total de busqueda", total)  
   const diferencia = total % comicsPorPagina
   if (diferencia > 0) {
     paginaActual = (total -(total % comicsPorPagina)) / comicsPorPagina
@@ -131,7 +122,6 @@ buttonLast.onclick = () => {
   else {
     paginaActual = (total -(total % comicsPorPagina)) / comicsPorPagina - comicsPorPagina
   }  
-  console.log("pagina actual", paginaActual, organized)
   buscador(paramType, paginaActual, paramOrder, paramLupa)
 }
 
@@ -143,5 +133,4 @@ formulario.onsubmit = (e) => {
 buttonSearch.onclick = () => {
   fetchURL()
   buscador(paramType, paginaActual, paramOrder, paramLupa)
-
 }
