@@ -51,7 +51,7 @@ h1 {
 }
 
 .contenedor-resultados {
-  width: 65%;
+  width: 58%;
 }
 .contenedor-resultados h3 {
   font-family: "Fjalla One";
@@ -68,17 +68,17 @@ h1 {
 }
 .contenedor-principal__resultados {
   flex-wrap: wrap;
-  margin: 0 1rem;
+  margin: 0.34rem 1rem;
   padding: 0 1rem;
-  width: 65%;
+  width: 58%;
 }
 .contenedor-principal__resultados__card__comics {
   transition: 0.3s;
-  width: 9.3rem;
+  width: 12rem;
   margin-bottom: 1rem;
 }
 .contenedor-principal__resultados__card__comics__contenedor-img img {
-  width: 9.3rem;
+  width: 12rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .contenedor-principal__resultados__card__comics__txt p {
@@ -98,15 +98,15 @@ h1 {
 }
 .contenedor-principal__resultados__card__characters {
   transition: 0.3s;
-  width: 9rem;
+  width: 11rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin-bottom: 1rem;
+  margin: 1rem 0.34rem;
 }
 .contenedor-principal__resultados__card__characters__contenedor-img {
   background-color: #424242;
 }
 .contenedor-principal__resultados__card__characters__contenedor-img img {
-  width: 9rem;
+  width: 11rem;
 }
 .contenedor-principal__resultados__card__characters__txt {
   display: flex;
@@ -164,7 +164,7 @@ h1 {
 .contenedor-buscador {
   margin-bottom: 1rem;
   padding-bottom: 1rem;
-  width: 65%;
+  width: 58%;
 }
 .contenedor-buscador__titulo h3 {
   font-family: "Fjalla One";
