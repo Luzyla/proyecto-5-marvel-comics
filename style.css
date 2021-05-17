@@ -74,14 +74,12 @@ h1 {
 }
 .contenedor-principal__resultados__card__comics {
   transition: 0.3s;
-  width: 10rem;
-  padding-bottom: 1rem;
-}
-.contenedor-principal__resultados__card__comics__contenedor-img {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 9.3rem;
+  margin-bottom: 1rem;
 }
 .contenedor-principal__resultados__card__comics__contenedor-img img {
-  width: 10rem;
+  width: 9.3rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .contenedor-principal__resultados__card__comics__txt p {
   margin-top: 1rem;
@@ -94,6 +92,9 @@ h1 {
 .contenedor-principal__resultados__card__comics:hover {
   cursor: pointer;
   transform: scale(1.1);
+}
+.contenedor-principal__resultados__card__comics:hover p {
+  color: red;
 }
 .contenedor-principal__resultados__card__characters {
   transition: 0.3s;
