@@ -19,13 +19,18 @@ Enjoy!
     - fetch
     - map
     - event listener
+    - onclick
+    - onsubmit
 - HTML5
 - SASS - CSS3
-- FLEX
+    - variables
+    - mixins
+    - extends
+    - structure 7+1
+    - FLEX
 - Accesibilidad / Accesibility
-    - aria labels
+    - aria label
     - tabIndex
-    - focus
 - Etiquetas semánticas / Semantic labels
 - REST API provided by MARVEL
 - favicon
