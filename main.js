@@ -21,8 +21,8 @@ let organized = ""
 let total = 0
 
 const cantidadResultados = document.getElementById("number-results")
-let paramType = ""
-let paramOrder = ""
+let paramType = "comics"
+let paramOrder = "name"
 let paramLupa = ""
 
 searchOrder.addEventListener("change", (e) => {
@@ -40,23 +40,37 @@ searchLupa.addEventListener("change", (e) => {
   console.log(paramLupa)
 });
 
-let url2 = ""
-
 const fetchURL = (paramType, paramOrder, paramLupa) => {
-  url2 = `${urlBase + paramType}?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}&orderBy=${paramOrder}`
-  // if (paramLupa) {
-  //   url = `${urlBase + paramType}
-  //   ?apikey=${apiKey}
-  //   &offset=${paginaActual * comicsPorPagina}
-  //   &orderBy=${paramOrder}
-  //   &title=${paramLupa}
-  //   `
-  // }
+  let newOrder = paramOrder
+  let startWith = "title"
+
+  if (paramType === "comics") {
+    if (paramOrder === "name") {
+      newOrder = "title"
+    }
+    if (paramOrder === "-name") {
+      newOrder = "-title"
+    }
+  }
+
+  if (paramType === "characters") {
+    startWith = "name"
+  }
+  else {
+    startWith = "title"
+  }
+  
+  url2 = `${urlBase + paramType}?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}&orderBy=${newOrder}`
+  if (paramLupa) {
+    url2 = `${urlBase + paramType}?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}&orderBy=${newOrder}&${startWith}StartsWith=${paramLupa}`
+  }
   return url2
 }
 
 const buscador = (paramType, paginaActual, paramOrder, paramLupa) => {
-  fetch(`${urlBase + paramType}?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}&orderBy=${paramOrder}`)
+  const urlParametrizada = fetchURL(paramType, paramOrder, paramLupa)
+  console.log("URL PARAM", urlParametrizada)
+  fetch(urlParametrizada)
   
   .then(res => res.json())
 
@@ -88,24 +102,24 @@ const buscador = (paramType, paginaActual, paramOrder, paramLupa) => {
   })
 };
 
-buscador("comics", 0, "title");
+buscador(paramType, paginaActual, paramOrder, paramLupa);
 
 buttonFirst.onclick = () => {
   paginaActual = 0
   console.log("pagina actual", paginaActual, organized)
-  buscador("comics", paginaActual, "title")
+  buscador(paramType, paginaActual, paramOrder, paramLupa)
 }
 
 buttonNext.onclick = () => {
   paginaActual++
   console.log("pagina actual", paginaActual, organized)
-  buscador("comics", paginaActual, "title")
+  buscador(paramType, paginaActual, paramOrder, paramLupa)
 }
 
 buttonPrev.onclick = () => {
   paginaActual--
   console.log("pagina actual", paginaActual, organized)
-  buscador("comics", paginaActual, "title")
+  buscador(paramType, paginaActual, paramOrder, paramLupa)
 }
 
 buttonLast.onclick = () => {
@@ -118,14 +132,16 @@ buttonLast.onclick = () => {
     paginaActual = (total -(total % comicsPorPagina)) / comicsPorPagina - comicsPorPagina
   }  
   console.log("pagina actual", paginaActual, organized)
-  buscador("comics", paginaActual, "title")
+  buscador(paramType, paginaActual, paramOrder, paramLupa)
 }
+
 
 formulario.onsubmit = (e) => {
   e.preventDefault()
 }
 
 buttonSearch.onclick = () => {
-  fetchURL(paramType, paramOrder, paramLupa);
-  buscador(paramType, paginaActual, "title")
+  fetchURL()
+  buscador(paramType, paginaActual, paramOrder, paramLupa)
+
 }
