@@ -1,0 +1,5 @@
+steps:
+  - name: 1Password Authenticate
+    uses: 1password/load-secrets-action@v1
+    with:
+      password: ${{ secrets.credential }}
