@@ -10,7 +10,6 @@ const searchLupa = document.getElementById("lupa-buscar");
 const formulario = document.querySelector("form");
 
 const urlBase = "https://gateway.marvel.com/v1/public/";
-/* const apiKey = "df980dd2c89683b6998c74dae0b8844a" */
 
 const apiKey = window.env.MARVEL_API_KEY;
 const ts = window.env.MARVEL_TIMESTAMP;
