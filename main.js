@@ -18,7 +18,7 @@ const hash = window.env.MARVEL_API_HASH;
 const comicsPorPagina = 20;
 let paginaActual = 0;
 let url = "";
-let organized = "";
+// let organized = "";
 let total = 0;
 
 const cantidadResultados = document.getElementById("number-results");
@@ -105,7 +105,9 @@ const buscador = (
         }">
         <div class="contenedor-principal__resultados__card__${choosed}__contenedor-img">
           <img
-            src="${url.thumbnail.path}/portrait_uncanny.jpg" 
+            src="${url.thumbnail.path}/portrait_uncanny.${
+          url.thumbnail.extension
+        }" 
             alt="${url.descripcion}"
           />
         </div>
