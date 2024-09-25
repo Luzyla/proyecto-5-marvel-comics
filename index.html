@@ -1,99 +1,93 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="./favicon-marvel.ico" type="image/x-icon">
-    <title>Buscador de Comics</title>
-  </head>
 
-  <body>
-    <header class="seccion__header">
-      <div class="header__title">
-        <h1>MARVEL COMICS</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="./favicon-marvel.ico" type="image/x-icon">
+  <title>Buscador de Comics</title>
+</head>
+
+<body>
+  <header class="seccion__header">
+    <div class="header__title">
+      <h1>MARVEL COMICS</h1>
+    </div>
+
+    <div class="header__image">
+      <img src="images/logo/marvel-Lu.jpg" alt="" />
+    </div>
+  </header>
+
+  <section class="contenedor-total">
+    <section class="contenedor-buscador">
+      <div class="contenedor-buscador__titulo">
+        <h3>Búsqueda</h3>
       </div>
-
-      <div class="header__image">
-        <img src="images/logo/marvel-Lu.jpg" alt="" />
-      </div>
-    </header>
-
-    <section class="contenedor-total">
-      <section class="contenedor-buscador">
-        <div class="contenedor-buscador__titulo">
-          <h3>Búsqueda</h3>
-        </div>
-        <form action="" class="contenedor-buscador__form">
-          <div class="contenedor-buscador__form__campos">
-            <input
-              type="image"
-              src="images/varios/icons8-search.svg"
-              alt="lupa"
-              class="contenedor-buscador__form__campos__lupita"
-              aria-hidden="true"
-              tabindex="-1"
-            />
-            <label for="busqueda">
-              <input
-                class="contenedor-buscador__form__campos__busqueda"
-                type="text"
-                name="busqueda"
-                id="lupa-buscar"
-                placeholder="Buscar..."
-              />
-            </label>
-          </div>
-
-          <div class="contenedor-buscador__form__tipo-selector">
-            <p>TIPO</p>
-            <select id="selector-tipo" name="tipo">
-              <option value="comics">COMICS</option>
-              <option value="characters">PERSONAJES</option>
-            </select>
-          </div>
-          <div class="contenedor-buscador__form__orden-selector">
-            <p>ORDEN</p>
-            <select id="selector-orden" name="orden">
-              <option value="name">A-Z</option>
-              <option value="-name">Z-A</option>
-              <option value="modified">Mas Nuevos</option>
-              <option value="-modified">Más Viejos</option>
-            </select>
-          </div>
-          <button type="submit" id="search">BUSCAR</button>
-        </form>
-      </section>
-
-      <div class="contenedor-resultados">
-        <h3>Resultados</h3>
-        <p id="number-results">48697 resultados</p>
-      </div>
-      <section class="contenedor-principal">
-        <div class="contenedor-principal__resultados" id="showing-search">
-            
+      <form action="" class="contenedor-buscador__form">
+        <div class="contenedor-buscador__form__campos">
+          <input type="image" src="images/varios/icons8-search.svg" alt="lupa"
+            class="contenedor-buscador__form__campos__lupita" aria-hidden="true" tabindex="-1" />
+          <label for="busqueda">
+            <input class="contenedor-buscador__form__campos__busqueda" type="text" name="busqueda" id="lupa-buscar"
+              placeholder="Buscar..." />
+          </label>
         </div>
 
-        <div class="contenedor-principal__paginacion">
-          <button type="submit" id="first-page"><<</button>
-          <button type="submit" id="prev-page"><</button>
-          <button type="submit" id="next-page">></button>
-          <button type="submit" id="last-page">>></button>
+        <div class="contenedor-buscador__form__tipo-selector">
+          <p>TIPO</p>
+          <select id="selector-tipo" name="tipo">
+            <option value="comics">COMICS</option>
+            <option value="characters">PERSONAJES</option>
+          </select>
         </div>
-      </section>
-
-      <footer class="contenedor-footer">
-        <p class="contenedor-footer__txt">
-          Created by <a href="www.github.com/luzyla"> @Luzyla </a>with a lot of
-          <span class="contenedor-footer__txt__emoji"> 💚 </span>and galons of
-          <span class="contenedor-footer__txt__emoji"> 🧉</span>
-        </p>
-        <p class="hidden">
-          Disclaimer: This is a WIP site. I would love it'll finish yet but is still a WIP. Enjoy it as it is! 😂
-        </p>
-      </footer>
+        <div class="contenedor-buscador__form__orden-selector">
+          <p>ORDEN</p>
+          <select id="selector-orden" name="orden">
+            <option value="name">A-Z</option>
+            <option value="-name">Z-A</option>
+            <option value="modified">Mas Nuevos</option>
+            <option value="-modified">Más Viejos</option>
+          </select>
+        </div>
+        <button type="submit" id="search">BUSCAR</button>
+      </form>
     </section>
 
-    <script src="./main.js"></script>
-  </body>
+    <div class="contenedor-resultados">
+      <h3>Resultados</h3>
+      <p id="number-results">48697 resultados</p>
+    </div>
+    <section class="contenedor-principal">
+      <div class="contenedor-principal__resultados" id="showing-search">
+
+      </div>
+
+      <div class="contenedor-principal__paginacion">
+        <button type="submit" id="first-page">
+          << </button>
+            <button type="submit" id="prev-page">
+              < </button>
+                <button type="submit" id="next-page">></button>
+                <button type="submit" id="last-page">>></button>
+      </div>
+    </section>
+
+    <footer class="contenedor-footer">
+      <p class="contenedor-footer__txt">
+        Created by <a href="www.github.com/luzyla"> @Luzyla </a>with a lot of
+        <span class="contenedor-footer__txt__emoji"> 💚 </span>and galons of
+        <span class="contenedor-footer__txt__emoji"> 🧉</span>
+      </p>
+      <p class="hidden">
+        Disclaimer: This is a WIP site. I would love it'll finish yet but is still a WIP. Enjoy it as it is! 😂
+      </p>
+    </footer>
+  </section>
+
+  <script src="./env.js"></script>
+  <script src="./main.js"></script>
+</body>
+
 </html>

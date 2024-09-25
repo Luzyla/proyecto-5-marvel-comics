@@ -10,7 +10,10 @@ const searchLupa = document.getElementById("lupa-buscar");
 const formulario = document.querySelector("form");
 
 const urlBase = "https://gateway.marvel.com/v1/public/";
-const apiKey = "MARVEL_API_KEY";
+const apiKey = window.env.MARVEL_API_KEY || process.env.MARVEL_API_KEY;
+const ts = window.env.MARVEL_TIMESTAMP || process.env.MARVEL_API_KEY;
+const hash = window.env.MARVEL_API_HASH || process.env.MARVEL_API_KEY;
+
 const comicsPorPagina = 20;
 let paginaActual = 0;
 let url = "";
@@ -21,6 +24,7 @@ const cantidadResultados = document.getElementById("number-results");
 let paramType = "comics";
 let paramOrder = "name";
 let paramLupa = "";
+const paramAuth = `apikey=${apiKey}&ts=${ts}&hash=${hash}`;
 
 searchOrder.addEventListener("change", (e) => {
   paramOrder = e.target.value;
@@ -37,7 +41,7 @@ searchLupa.addEventListener("change", (e) => {
   console.log(paramLupa);
 });
 
-const fetchURL = (paramType, paramOrder, paramLupa) => {
+const fetchURL = (paramType, paramOrder, paramLupa, paramAuth) => {
   let newOrder = paramOrder;
   let startWith = "title";
 
@@ -56,19 +60,30 @@ const fetchURL = (paramType, paramOrder, paramLupa) => {
     startWith = "title";
   }
 
-  url = `${urlBase + paramType}?apikey=${apiKey}&offset=${
+  url = `${urlBase + paramType}?${paramAuth}&offset=${
     paginaActual * comicsPorPagina
   }&orderBy=${newOrder}`;
   if (paramLupa) {
-    url = `${urlBase + paramType}?apikey=${apiKey}&offset=${
+    url = `${urlBase + paramType}?${paramAuth}&offset=${
       paginaActual * comicsPorPagina
     }&orderBy=${newOrder}&${startWith}StartsWith=${paramLupa}`;
   }
   return url;
 };
 
-const buscador = (paramType, paginaActual, paramOrder, paramLupa) => {
-  const urlParametrizada = fetchURL(paramType, paramOrder, paramLupa);
+const buscador = (
+  paramType,
+  paginaActual,
+  paramOrder,
+  paramLupa,
+  paramAuth
+) => {
+  const urlParametrizada = fetchURL(
+    paramType,
+    paramOrder,
+    paramLupa,
+    paramAuth
+  );
 
   fetch(urlParametrizada)
     .then((res) => res.json())
@@ -101,21 +116,21 @@ const buscador = (paramType, paginaActual, paramOrder, paramLupa) => {
     });
 };
 
-buscador(paramType, paginaActual, paramOrder, paramLupa);
+buscador(paramType, paginaActual, paramOrder, paramLupa, paramAuth);
 
 buttonFirst.onclick = () => {
   paginaActual = 0;
-  buscador(paramType, paginaActual, paramOrder, paramLupa);
+  buscador(paramType, paginaActual, paramOrder, paramLupa, paramAuth);
 };
 
 buttonNext.onclick = () => {
   paginaActual++;
-  buscador(paramType, paginaActual, paramOrder, paramLupa);
+  buscador(paramType, paginaActual, paramOrder, paramLupa, paramAuth);
 };
 
 buttonPrev.onclick = () => {
   paginaActual--;
-  buscador(paramType, paginaActual, paramOrder, paramLupa);
+  buscador(paramType, paginaActual, paramOrder, paramLupa, paramAuth);
 };
 
 buttonLast.onclick = () => {
@@ -126,7 +141,7 @@ buttonLast.onclick = () => {
     paginaActual =
       (total - (total % comicsPorPagina)) / comicsPorPagina - comicsPorPagina;
   }
-  buscador(paramType, paginaActual, paramOrder, paramLupa);
+  buscador(paramType, paginaActual, paramOrder, paramLupa, paramAuth);
 };
 
 formulario.onsubmit = (e) => {
@@ -135,5 +150,5 @@ formulario.onsubmit = (e) => {
 
 buttonSearch.onclick = () => {
   fetchURL();
-  buscador(paramType, paginaActual, paramOrder, paramLupa);
+  buscador(paramType, paginaActual, paramOrder, paramLupa, paramAuth);
 };
