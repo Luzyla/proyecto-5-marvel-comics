@@ -11,8 +11,8 @@ const formulario = document.querySelector("form");
 
 const urlBase = "https://gateway.marvel.com/v1/public/";
 const apiKey = process.env.MARVEL_API_KEY;
-const ts = process.env.MARVEL_API_KEY;
-const hash = process.env.MARVEL_API_KEY;
+const ts = process.env.MARVEL_TIMESTAMP;
+const hash = process.env.MARVEL_API_HASH;
 
 const comicsPorPagina = 20;
 let paginaActual = 0;
