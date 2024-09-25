@@ -10,9 +10,9 @@ const searchLupa = document.getElementById("lupa-buscar");
 const formulario = document.querySelector("form");
 
 const urlBase = "https://gateway.marvel.com/v1/public/";
-const apiKey = github.actions.getInput("MARVEL_API_KEY");
-const ts = github.actions.getInput("MARVEL_TIMESTAMP");
-const hash = github.actions.getInput("MARVEL_API_HASH");
+const apiKey = window.env.MARVEL_API_KEY;
+const ts = window.env.MARVEL_TIMESTAMP;
+const hash = window.env.MARVEL_API_HASH;
 
 const comicsPorPagina = 20;
 let paginaActual = 0;
